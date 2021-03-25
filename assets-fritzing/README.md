@@ -10,13 +10,17 @@
 
 ### ESP8266 NodeMCU V3 LoLin
 
-https://forum.fritzing.org/uploads/default/original/2X/a/a8bc913e72db16f35af927009af288560bf783b8.fzpz
+https://forum.fritzing.org/t/esp8266-nodemcu-lolin/6386
 
 ![nodemcu-lolin-fized](img/nodemcu-lolin-fized.png)
 
-https://github.com/OgreTransporter/fritzing-parts-extra/raw/master/NodeMCU_v3_LoLin.fzpz
+https://github.com/OgreTransporter/fritzing-parts-extra
 
 ![nodemcu-lolin](img/nodemcu-lolin.png)
+
+https://github.com/roman-minyaylov/nodemcu-v3-fritzing
+
+![nodemcu-v3](img/nodemcu-v3.png)
 
 ### DHT11
 
@@ -26,6 +30,6 @@ https://arduinomodules.info/download/ky-015-temperature-humidity-sensor-module-z
 
 ### LDR
 
-https://github.com/e-radionicacom/e-radionica.com-Fritzing-Library-parts-/blob/master/LM393%20LDR%20breakout.fzpz
+https://github.com/e-radionicacom/e-radionica.com-Fritzing-Library-parts-
 
 ![ldr](img/ldr.png)
