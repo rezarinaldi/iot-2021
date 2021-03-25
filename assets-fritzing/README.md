@@ -1,6 +1,6 @@
 # 🛠 assets fritzing
 
-    Pertama-tama Anda harus menginstall aplikasi Fritzing Designer terlebih dahulu, link download ada dibawah:
+    Pertama-tama Anda harus menginstall aplikasi Fritzing Designer terlebih dahulu, link download ada di bawah:
 
 - [link alternatif 1 (github) \*non windows](https://github.com/fritzing/fritzing-app/releases)
 - [link alternatif 2 (drive)](https://drive.google.com/drive/folders/143UEhZlI20YVZcyeCiVGbbSZ-6VFV0yK?usp=sharing)
@@ -13,6 +13,10 @@
 https://forum.fritzing.org/t/esp8266-nodemcu-lolin/6386
 
 ![nodemcu-lolin-fized](img/nodemcu-lolin-fized.png)
+
+https://drive.google.com/file/d/1WsjfrpvtWcIlhix8xdx-hG_UWSkQmeIQ/view
+
+![nodemcu-lolin-fized](img/nodemcu-ch340.png)
 
 https://github.com/OgreTransporter/fritzing-parts-extra
 

@@ -1,7 +1,7 @@
 #include <Arduino.h>
 
 void setup() {
-  Serial.begin(115200); // setbaudrate 115200
+  Serial.begin(9600); // setbaudrate 115200
 }
 
 void loop() {
