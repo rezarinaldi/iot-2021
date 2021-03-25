@@ -1,5 +1,11 @@
 # 🛠 assets fritzing
 
+    Pertama-tama Anda harus menginstall aplikasi Fritzing Designer terlebih dahulu, link download ada dibawah:
+
+- [link alternatif 1 (github) \*non windows](https://github.com/fritzing/fritzing-app/releases)
+- [link alternatif 2 (drive)](https://drive.google.com/drive/folders/143UEhZlI20YVZcyeCiVGbbSZ-6VFV0yK?usp=sharing)
+- [link alternatif 3 (website resmi)](http://fritzing.org/download/0.8.7b/windows/fritzing.0.8.7b.pc.zip)
+
 ## 🌐 Source
 
 ### ESP8266 NodeMCU V3 LoLin
