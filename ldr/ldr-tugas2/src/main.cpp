@@ -45,21 +45,22 @@ void loop() {
     celcius = t;
   }
 
-  if (t < 32 && nilaiSensor > 800) {
+  if (t < 27.30 && nilaiSensor > 800) {
     biruKedip();
     Serial.print("Nilai Sensor LDR: ");
     Serial.println(nilaiSensor);
-    Serial.print("Temperatur: ");
-    Serial.println(celcius);
+    Serial.print("Nilai Temperatur: ");
+    Serial.print(celcius);
+    Serial.println(F("°C "));
     Serial.println("Cahaya redup dan Suhu dingin");
     Serial.println("Lampu LED Biru berkedip");
-  } else if (t > 30 && nilaiSensor < 400) {
+  } else if (t > 27.60 && nilaiSensor < 400) {
     digitalWrite(RED_LED, LOW);
     Serial.print("Nilai Sensor LDR: ");
     Serial.println(nilaiSensor);
-    Serial.print("Temperatur: ");
+    Serial.print("Nilai Temperatur: ");
     Serial.print(celcius);
-    Serial.print(F("°C "));
+    Serial.println(F("°C "));
     Serial.println("Cahaya terang dan Suhu panas");
     Serial.println("Lampu LED Merah menyala");
   }
