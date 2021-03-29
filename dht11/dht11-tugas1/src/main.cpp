@@ -14,6 +14,7 @@ void loop() {
   float h = dht.readHumidity();
   float t = dht.readTemperature();
   float f = dht.readTemperature(true);
+  float converted = 0.00; // variabel konversi dalam satuan kelvin dan reamur
 
   if (isnan(h) || isnan(t) || isnan(f)) {
     Serial.println("Failed to read from DHT sensor!");
@@ -28,6 +29,17 @@ void loop() {
   Serial.print(F("% Suhu: "));
   Serial.print(t);
   Serial.print(F("°C "));
+
+  // rumus konversi dalam satuan kelvin
+  converted = t + 273.15;
+  Serial.print(converted);
+  Serial.print("K ");
+
+  // rumus konversi dalam satuan reamur
+  converted = t * 0.8;
+  Serial.print(converted);
+  Serial.print("°R ");
+
   Serial.print(f);
   Serial.print(F("°F Heat index: "));
   Serial.print(hic);

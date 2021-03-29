@@ -37,3 +37,10 @@ https://arduinomodules.info/download/ky-015-temperature-humidity-sensor-module-z
 https://github.com/e-radionicacom/e-radionica.com-Fritzing-Library-parts-
 
 ![ldr](img/ldr.png)
+
+### LCM1602 IIC
+
+https://wiki.odroid.com/odroid-h2/application_note/i2c_20x4_lcd
+https://github.com/xodio/xod-docs/tree/master/docs/tutorial/108-text-lcd
+
+![lcm1602-iic](img/lcm1602-iic.png)
