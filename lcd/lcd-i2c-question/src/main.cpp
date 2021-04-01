@@ -1,18 +1,10 @@
 #include <Arduino.h>
 #include <LiquidCrystal_I2C.h>
-#include <RTClib.h>
-#include <Wire.h>
 
 LiquidCrystal_I2C lcd(0x27, 16, 2);
-RTC_DS3231 rtc;
-
-char t[32];
 
 void setup() {
   Serial.begin(9600);
-  Wire.begin();
-  rtc.begin();
-  rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   // initialize LCD
   lcd.init();
   // turn on LCD backlight
@@ -34,19 +26,19 @@ void scrollText(int row, String message, int delayTime, int lcdColumns) {
 }
 
 void loop() {
-  // set cursor to first column, first row
+  // set cursor to two column, first row
   lcd.setCursor(1, 0);
 
   lcd.home();
 
   // Print DateTime to the screen
-  DateTime now = rtc.now();
-  sprintf(t, "%02d-%02d %02d:%02d", now.day(), now.month(), now.hour(),
-          now.minute());
-  lcd.print(t);
+  // untuk menampilkan datetime masih cara manual karena tidak memiliki
+  // perangkat tambahan yaitu RTC Module salah satunya DS3231 ->
+  // https://somtips.com/set-time-on-ds3231-real-time-clock-with-arduino-uno/
+  lcd.print("31-03-2021 20:45");
 
   // Print scrolling message
-  scrollText(1, ("Reza Rinaldi - Polinema 2021"), 250, 16);
+  scrollText(1, ("Reza Rinaldi - IoT Polinema"), 1000, 16);
 
   delay(2000);
 }
