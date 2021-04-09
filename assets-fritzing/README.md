@@ -51,3 +51,31 @@ https://github.com/xodio/xod-docs/tree/master/docs/tutorial/108-text-lcd
 https://github.com/e-radionicacom/e-radionica.com-Fritzing-Library-parts-
 
 ![rfid](img/rfid-rc522.png)
+
+### BMP
+
+- 180
+
+http://omnigatherum.ca/wp/?p=6
+
+![bmp180](img/bmp180.png)
+
+- 280
+
+http://omnigatherum.ca/wp/?p=338
+
+![bmp280](img/bmp280.png)
+
+### Rain Sensor
+
+- Control Board
+
+http://omnigatherum.ca/wp/?p=338
+
+![rs-control](img/rs-control.png)
+
+- Detection Board
+
+http://omnigatherum.ca/wp/?p=338
+
+![rs-detection](img/rs-detection.png)
