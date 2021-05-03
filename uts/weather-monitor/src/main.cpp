@@ -1,6 +1,7 @@
 #include <Adafruit_BMP085.h>
 #include <Arduino.h>
 #include <DHT.h>
+#include <SPI.h>
 
 #define DHTPIN D3
 #define DHTTYPE DHT11
