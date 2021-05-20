@@ -1,7 +1,9 @@
 #include <Arduino.h>
 #include <DHT.h>
+#include <ESP8266HTTPClient.h>
 #include <ESP8266WebServer.h>
 #include <ESP8266WiFi.h>
+#include <FirebaseArduino.h>
 #include <SFE_BMP180.h>
 #include <WiFiClient.h>
 #include <Wire.h>
@@ -12,6 +14,10 @@
 #define DHTPIN D3
 #define DHTTYPE DHT11
 #define ALTITUDE 624 // Your Altitude in meters search in google
+
+// Firebase
+#define FIREBASE_HOST "weatherapp-1ae5b-default-rtdb.firebaseio.com"
+#define FIREBASE_AUTH "JnOlO9ozkVM1Dycog3mFDRMI4iTOMIuByUOGqVZ4"
 
 SFE_BMP180 pressure;
 
@@ -92,15 +98,21 @@ void handleADC() {
 
   Serial.print("Humidity: ");
   Serial.print(h);
-  Serial.println("°C");
+  Serial.println("%");
   Serial.print("Temperature: ");
   Serial.print(t);
-  Serial.println("%");
-
+  Serial.println("°C");
+  
   int rainReading = analogRead(rain);
   Serial.print("Rain: ");
-  Serial.print(rainReading);
-  Serial.println("%");
+  Serial.println(rainReading);
+  
+  // Integer to string conversion sensors
+  String firePmb = String(pmb) + String(" mb"); //PMB integer to string conversion
+  String firePhg = String(phg) + String(" hg"); //PHG integer to string conversion
+  String fireHumid = String(h) + String(" %"); //Humidity integer to string conversion
+  String fireTemp = String(t) + String(" °C"); //Temperature integer to string conversion
+  String fireRain = String(rainReading); //Rain integer to string conversion
 
   Serial.println();
   delay(2000);
@@ -114,6 +126,19 @@ void handleADC() {
   digitalWrite(LED, !digitalRead(LED)); // Toggle LED on data request ajax
   server.send(200, "text/plane", data); // Send ADC value, temperature and
                                         // humidity JSON to client ajax request
+
+  // Send string sensors to path firebase
+  Firebase.pushString("/BMP180/Pressure (mb)", firePmb); //setup path to send PMB readings
+  Firebase.pushString("/BMP180/Pressure (hg)", firePhg); //setup path to send PHG readings
+  Firebase.pushString("/DHT11/Humidity", fireHumid); //setup path to send Humidity readings
+  Firebase.pushString("/DHT11/Temperature", fireTemp); //setup path to send Temperature readings
+  Firebase.pushString("/RAIN", fireRain); //setup path to send Rain readings
+    if (Firebase.failed()) 
+    {
+      Serial.print("pushing /logs failed:");
+      Serial.println(Firebase.error());
+      return;
+  }
 }
 
 void setup() {
@@ -158,6 +183,9 @@ void setup() {
   Serial.println(ssid);
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP()); // IP address assigned to your ESP
+
+  // Firebase
+  Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH); // connect to the firebase
 
   server.on("/", handleRoot); // Which routine to handle at root location. This
                               // is display page

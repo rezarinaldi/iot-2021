@@ -3,6 +3,15 @@ const char MAIN_page[] PROGMEM = R"=====(
 <html>
   <head>
     <title>Live Weather Station Dashboard</title>
+    <link
+      rel="shortcut icon"
+      href="https://img-premium.flaticon.com/png/512/578/578116.png?token=exp=1621482257~hmac=a8f569a485470791b585e0aaf7fdb3bf"
+      type="image/png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+    />
   </head>
   <style>
     @import url(https://fonts.googleapis.com/css?family=Inter);
@@ -143,7 +152,9 @@ const char MAIN_page[] PROGMEM = R"=====(
       </div>
       <div class="upper">
         <div class="date" id="date">Month 00, 0000</div>
-        <div class="year">Temperature</div>
+        <div class="year">
+          <i class="fas fa-thermometer-three-quarters"></i> Temperature
+        </div>
         <div class="place update" id="temp">0 &deg;C</div>
       </div>
       <div style="text-align: center">
@@ -152,19 +163,19 @@ const char MAIN_page[] PROGMEM = R"=====(
       <div class="lower">
         <ul class="infos">
           <li class="info weather">
-            <h2 class="title">PRESSURE (mb)</h2>
+            <h2 class="title"><i class="fas fa-wind"></i> PRESSURE (mb)</h2>
             <span class="update" id="pressuremb">0 mb</span>
           </li>
           <li class="info weather">
-            <h2 class="title">PRESSURE (hg)</h2>
-            <span class="update" id="pressurehg">0 mb</span>
+            <h2 class="title"><i class="fas fa-wind"></i> PRESSURE (hg)</h2>
+            <span class="update" id="pressurehg">0 hg</span>
           </li>
           <li class="info wind">
-            <h2 class="title">RAIN</h2>
-            <span class="update" id="rain">0%</span>
+            <h2 class="title"><i class="fas fa-cloud-rain"></i> RAIN</h2>
+            <span class="update" id="rain">0</span>
           </li>
           <li class="info humidity">
-            <h2 class="title">HUMIDITY</h2>
+            <h2 class="title"><i class="fas fa-tint"></i> HUMIDITY</h2>
             <span class="update" id="humidity">0%</span>
           </li>
         </ul>
@@ -203,7 +214,7 @@ const char MAIN_page[] PROGMEM = R"=====(
           if (this.readyState == 4 && this.status == 200) {
             var txt = this.responseText;
             var obj = JSON.parse(txt); //Ref: https://www.w3schools.com/js/js_json_parse.asp
-            document.getElementById("rain").innerHTML = obj.Rain + "%";
+            document.getElementById("rain").innerHTML = obj.Rain;
             document.getElementById("temp").innerHTML =
               Math.round(obj.Temperature) + "&deg;C";
             document.getElementById("humidity").innerHTML =
