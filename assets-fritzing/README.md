@@ -79,3 +79,9 @@ http://omnigatherum.ca/wp/?p=338
 http://omnigatherum.ca/wp/?p=338
 
 ![rs-detection](img/rs-detection.png)
+
+### Water Level Sensor
+
+http://omnigatherum.ca/wp/?p=228
+
+![water-level](img/water-level.png)
